@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="eZdravaIshrana_Mobile.Registracija"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:eZdravaIshrana_Mobile"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" Margin="30,0,30,0">
+        <TextBlock Text="eZdravaIshrana::REGISTRACIJA" FontSize="20" HorizontalAlignment="Center"></TextBlock>
+            <TextBox Name="imeInput" Header="Ime:" ></TextBox>
+            <TextBlock Name="imeError" Foreground="Red" Visibility="Collapsed"></TextBlock>
+            <TextBox Name="prezimeInput" Header="Prezime:"></TextBox>
+            <TextBlock Name="prezimeError" Foreground="Red" Visibility="Collapsed"></TextBlock>
+            <TextBox Name="emailInput" Header="Email:" InputScope="EmailSmtpAddress"></TextBox>
+            <TextBlock Name="emailError" Text="" Foreground="Red" Visibility="Collapsed"></TextBlock>
+            <TextBox Name="korisnickoImeInput" Header="Korisnicko ime:"></TextBox>
+            <TextBlock Name="korisnickoImeError" Text="" Foreground="Red" Visibility="Collapsed"></TextBlock>
+            <PasswordBox Name="lozinkaInput" Header="Lozinka:"></PasswordBox>
+            <TextBlock Name="lozinkaError" Text="" Foreground="Red" Visibility="Collapsed"></TextBlock>
+            <Button Name="registracijaButton" Click="registracijaButton_Click"  Content="Registracija" HorizontalAlignment="Right"></Button>
+        </StackPanel>
+    </Grid>
+</Page>

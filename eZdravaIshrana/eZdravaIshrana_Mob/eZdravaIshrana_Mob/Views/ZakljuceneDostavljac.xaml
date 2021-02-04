@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:viewModels1="clr-namespace:eZdravaIshrana_Mob.ViewModels"
+             mc:Ignorable="d"
+             x:Class="eZdravaIshrana_Mob.Views.ZakljuceneDostavljac"
+             Title="Zaključene narudžbe">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <StyleSheet Source="/S1/Style.css"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.BindingContext>
+        <viewModels1:DostavljacZakljucenVM></viewModels1:DostavljacZakljucenVM>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label FontSize="Medium" FontFamily="Ariel" TextColor="#2196F3" FontAttributes="Bold" Text="eZdravaIshrana :: Zaključene narudžbe" HorizontalOptions="CenterAndExpand" ></Label>
+
+
+            <Image HeightRequest="150" Source="Assets\ezdravaishrana.png" VerticalOptions="Start" HorizontalOptions="Center"  />
+
+
+            <Label TextColor="#2196F3" FontAttributes="Italic" Text="Lista Zaključenih narudžbi:"    
+                HorizontalOptions="StartAndExpand" />
+
+            <ListView  ItemSelected="Aktiv_ItemSelected" x:Name="Aktiv" ItemsSource="{Binding NList}"  HorizontalOptions="CenterAndExpand">
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition  Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+
+                                <StackLayout Margin="20,0,0,0" Grid.Column="1" Padding="10" >
+                                    <Label TextColor="#2196F3" FontAttributes="Italic" HorizontalOptions="StartAndExpand" Text="Broj računa: "                                
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="18" />
+                                    <Label TextColor="#2196F3" FontAttributes="Italic"  HorizontalOptions="StartAndExpand" Text="Ukupno sa PDV-om: "                               
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="16" />
+                                    <Label TextColor="#2196F3" FontAttributes="Italic" HorizontalOptions="StartAndExpand" Text="Ime kupca: "                               
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="16" />
+                                    <Label TextColor="#2196F3" FontAttributes="Italic" HorizontalOptions="StartAndExpand" Text="Datum narudžbe: "                               
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="16" />
+                                    <Label TextColor="#2196F3" FontAttributes="Italic" HorizontalOptions="StartAndExpand" Text="Udaljenost rute: "                               
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="16" />
+                                    <Label TextColor="#2196F3" FontAttributes="Italic"  HorizontalOptions="StartAndExpand" Text="Vrijeme potrebno: "                               
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="16" />
+                                    <Label TextColor="#2196F3" FontAttributes="Italic"  HorizontalOptions="StartAndExpand" Text="Broj stavki: "                               
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="16" />
+                                    <Label TextColor="#2196F3" FontAttributes="Italic" HorizontalOptions="StartAndExpand" Text="Način plaćanja: "                               
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="16" />
+
+                                    <Label TextColor="#2196F3" FontAttributes="Italic" HorizontalOptions="StartAndExpand" Text="Adresa "                               
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="16" />
+                                </StackLayout>
+                                <StackLayout Grid.Column="2" Padding="10">
+
+
+                                    <Label Text="{Binding BrojRacuna}"                                
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="18" />
+                                    <Label Text="{Binding IznosSaPDV ,StringFormat='{0} KM'}"                               
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="16" />
+                                    <Label Text="{Binding Korisnik}"                               
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="16" />
+                                    <Label Text="{Binding DatumPrikaz}"                               
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="16" />
+                                    <Label Text="{Binding UdaljenostRute,StringFormat='{0} km'}"                               
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="16" />
+                                    <Label Text="{Binding VrijemeRute,StringFormat='{0} mins'}"                               
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="16" />
+
+                                    <Label Text="{Binding BrojStavki }"                               
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="16" />
+
+                                    <Label Text="{Binding PayByCardString}"                               
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="16" />
+                                    <Label Text="{Binding Adresa}"                               
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="16" />
+
+
+                                </StackLayout>
+                         
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

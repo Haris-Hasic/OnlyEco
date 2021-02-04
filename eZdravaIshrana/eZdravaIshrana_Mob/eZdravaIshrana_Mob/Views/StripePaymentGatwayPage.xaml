@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:eZdravaIshrana_Mob.ViewModels"
+             mc:Ignorable="d"
+             x:Class="eZdravaIshrana_Mob.Views.StripePaymentGatwayPage"
+            Title="Plaćanje karticom" >
+    <ContentPage.BindingContext>
+        <viewModels:PaymentGatewayPageViewModel></viewModels:PaymentGatewayPageViewModel>
+    </ContentPage.BindingContext>
+    <NavigationPage.TitleView>
+        <Grid HorizontalOptions="FillAndExpand">
+
+        </Grid>
+    </NavigationPage.TitleView>
+
+    <ContentView>
+        <StackLayout Margin="2,40,0,0" VerticalOptions="FillAndExpand">
+            <Label HorizontalOptions="CenterAndExpand" FontSize="Medium" FontFamily="Ariel" FontAttributes="Bold" TextColor="#2196F3" Text="eZdravaIshrana :: Plaćanje karticom"/>
+
+            <Image HorizontalOptions="CenterAndExpand" Source="Assets\ezdravaishrana.png" VerticalOptions="Center"  Margin="0,3,0,0"/>
+
+            <Label TextColor="#2196F3" Text="Unesite podatke vaše kreditne kartice "
+                HorizontalTextAlignment="Center" FontAttributes="Bold"
+                       FontSize="22" />
+            <Grid HorizontalOptions="Center"  Padding="20,20,20,0" ColumnSpacing="20">
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout Grid.Row="0" Grid.ColumnSpan="2">
+                    <Entry x:Name="CardNumber" Placeholder="  Enter card  number"  Text="{Binding CreditCardModel.Number}"  ReturnType="Next" 
+                              MaxLength="16"        Completed="CardNumber_Completed"  TextChanged="CardNumber_TextChanged" Keyboard="Keyboard.Numeric"/>
+                    <Label FontAttributes="Bold" x:Name="ErrorLabel_CardNumber"  IsVisible="{Binding IsError_CardNumber}" TextColor="Red" FontSize="13" />
+                </StackLayout>
+
+
+                <StackLayout Margin="0,10,0,0"  Grid.Row="1" Grid.Column="0">
+                    <Entry x:Name="Month" Placeholder="  MM" Text="{Binding ExpMonth}"  ReturnType="Next" Keyboard="Keyboard.Numeric"
+                                   MaxLength="2"   Completed="Month_Completed" TextChanged="Month_TextChanged"/>
+                    <Label FontAttributes="Bold" x:Name="ErrorLabel_Month"  IsVisible="{Binding IsError_Month}"  TextColor="Red" FontSize="13"/>
+                </StackLayout>
+
+                <StackLayout Margin="0,10,0,0"   Grid.Row="1" Grid.Column="1">
+                    <Entry x:Name="Year" Placeholder="  YY"  Text="{Binding ExpYear}"   ReturnType="Next"
+                                MaxLength="2"        Completed="Year_Completed" TextChanged="Year_TextChanged" Keyboard="Keyboard.Numeric"/>
+                    <Label FontAttributes="Bold" x:Name="ErrorLabel_Year" Text="year can be empty !!" IsVisible="{Binding IsError_Year}"  TextColor="Red" FontSize="13"/>
+                </StackLayout>
+                <StackLayout Margin="0,10,0,0"  Grid.Row="2" Grid.ColumnSpan="2">
+                    <Entry x:Name="Cvv" Placeholder="  Cvv code" Text="{Binding CreditCardModel.Cvc}"  ReturnType="Next" 
+                                      Completed="Cvv_Completed" MaxLength="3" TextChanged="Cvv_TextChanged" Keyboard="Keyboard.Numeric"/>
+                    <Label FontAttributes="Bold" x:Name="ErrorLabel_Cvv" Text="CVV can not be empty !!" IsVisible="{Binding IsError_Cvv}" TextColor="Red" FontSize="13" />
+
+                    <Button Margin="0,10,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Clicked="Submit_Button_Clicked"  Command="{Binding SubmitCommand}"   Text="Naruči"  x:Name="Submit_Button"  BorderRadius="0"   BackgroundColor="#3897f0" TextColor="White"   Padding="4,4,4,4"  CornerRadius="7" ContentLayout="Right, 15" ImageSource="Assets\icons8-money-48.png"></Button>
+
+                    <Label  x:Name="Gotovolbl" Text="Narudzba nije uspješno procesirana !!!" IsVisible="False" TextColor="Red" FontSize="13" />
+
+                </StackLayout>
+
+
+
+
+            </Grid>
+
+            <StackLayout Margin="5" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" >
+                <Label TextColor="#2196F3" x:Name="lblIznos" Text="{Binding Iznos,StringFormat='Ukupno za platiti: {0} KM'}" FontSize="20" FontAttributes="Italic"></Label>
+          
+
+                <Button HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand"  BackgroundColor="#3897f0" TextColor="White" Clicked="Button_Clicked"  Padding="4,4,4,4"  Text="Zakljuci narudžbu" CornerRadius="7" ContentLayout="Right, 15" ImageSource="Assets\icons8-next-page-40.png"></Button>
+                <Button HorizontalOptions="FillAndExpand" HeightRequest="50" VerticalOptions="EndAndExpand" BackgroundColor="#3897f0" TextColor="White" Clicked="Button_Clicked_1"  Padding="4,4,4,4"  Text="Poništi zahtjev" CornerRadius="7" ContentLayout="Right, 15" ImageSource="Assets\icons8-delete-16.png"></Button>
+
+
+            </StackLayout>
+        </StackLayout>
+    </ContentView>
+</ContentPage>  

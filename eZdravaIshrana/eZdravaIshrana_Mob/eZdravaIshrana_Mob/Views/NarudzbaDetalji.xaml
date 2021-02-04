@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="eZdravaIshrana_Mob.Views.NarudzbaDetalji">
+    <ContentPage.Content>
+        <StackLayout Margin="10,10,10,10">
+            <Label HorizontalOptions="CenterAndExpand" FontSize="Medium" FontFamily="Ariel" FontAttributes="Bold" TextColor="#2196F3" Text="eZdravaIshrana :: Narudžba detalji"/>
+
+            <Image x:Name="slika" HorizontalOptions="CenterAndExpand" Source="Assets\ezdravaishrana.png" VerticalOptions="Center"  Margin="0,3,0,0"/>
+
+            <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"  Margin="10,0,0,0" >
+
+
+
+
+                <StackLayout  >
+                    <Label HorizontalOptions="CenterAndExpand" x:Name="popustlbl" TextColor="#2196F3" FontAttributes="Italic" FontSize="Small"
+                   Text="Možete iskoristiti vaše bodove"
+                 />
+                    <Label HorizontalOptions="CenterAndExpand" x:Name="popustlbl2" TextColor="#2196F3" FontAttributes="Italic" FontSize="Small"
+                   Text="( 50 bodova = 15% popusta )"
+                 />
+
+                    <Grid x:Name="bodovigrid"   HorizontalOptions="CenterAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout  Grid.Column="0" Padding="0,0,20,0">
+
+
+                            <Label TextColor="#2196F3" FontAttributes="Italic" FontSize="Medium" Text="Vaši bodovi:"/>
+                            <Label TextColor="#2196F3" FontAttributes="Italic" FontSize="Medium" Text="Novo stanje:" />
+
+
+                        </StackLayout>
+                        <StackLayout Grid.Column="1">
+
+                            <Label FontAttributes="Bold" FontSize="Medium" x:Name="korisnikbodovi"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+                            <Label FontAttributes="Bold" FontSize="Medium"  x:Name="korisnikbodovinovo"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+
+                            <Button BackgroundColor="#3897f0" TextColor="White" Clicked="Button_Clicked_4" Grid.Column="1" Padding="4,4,4,4"  Text="Iskoristi popust" CornerRadius="7" ContentLayout="Right, 15" ImageSource="Assets\icons8-discount-40.png"></Button>
+                           
+                            <Label  FontAttributes="Italic" FontSize="9" x:Name="lbl2plac"
+                            IsVisible="False"
+                VerticalOptions="EndAndExpand" 
+                HorizontalOptions="EndAndExpand"
+                    TextColor="#2196F3"        
+                            />
+                        </StackLayout>
+                    </Grid>
+
+
+
+                </StackLayout>
+            </Grid>
+
+            <Label TextColor="#2196F3" FontAttributes="Italic" FontSize="Caption"
+                   Text="Besplatno prvih 5 km. (1 Kilometar = 4 KM)"/>
+
+
+            <Grid    HorizontalOptions="CenterAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+
+                <StackLayout  Grid.Column="0" Padding="0,0,20,0">
+
+
+                    <Label TextColor="#2196F3" FontAttributes="Italic" FontSize="Medium" Text="Naziv skladišta:"/>
+                    <Label TextColor="#2196F3" FontAttributes="Italic" FontSize="Medium" Text="Distanca:" />
+
+                    <Label TextColor="#2196F3" FontAttributes="Italic" FontSize="Medium" Text="Vrijeme:" />
+                    <Label TextColor="#2196F3" FontAttributes="Italic"   FontSize="Medium"  Text="Cijena bez PDV-a:"/>
+                    <Label TextColor="#2196F3"  FontAttributes="Italic"  FontSize="Medium" Text="Cijena sa PDV-om:"  />
+                    <Label  TextColor="#2196F3"  FontAttributes="Italic"  FontSize="Medium" Text="Broj stavki:" />
+
+                    <Label  TextColor="#2196F3" FontAttributes="Italic"  FontSize="Medium" x:Name="Lbldistancaplacanja"
+                    Text="Distanca plaćanje"
+                   IsVisible="False"/>
+                    <Button BackgroundColor="#3897f0" TextColor="White" Clicked="Button_Clicked_3" Grid.Column="0" Padding="4,4,4,4"  Text="Plaćanje tokom predaje" CornerRadius="7" ContentLayout="Right, 15" ImageSource="Assets\icons8-money-48.png"></Button>
+
+                </StackLayout>
+                <StackLayout Grid.Column="1">
+
+                    <Label FontAttributes="Bold" FontSize="Medium" x:Name="SkladisteNaziv"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+                    <Label FontAttributes="Bold" FontSize="Medium" x:Name="Distanca"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+                    <Label FontAttributes="Bold" FontSize="Medium" x:Name="Vrijeme"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+                    <Label FontAttributes="Bold"  FontSize="Medium" x:Name="CijenaBezPDV"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+                    <Label  FontAttributes="Bold" FontSize="Medium" x:Name="CijenaSaPDV"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+                    <Label FontAttributes="Bold" FontSize="Medium" x:Name="BrojStavki"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+                    <Label  FontAttributes="Bold" FontSize="Medium" x:Name="DistancaPlacanje"
+                   IsVisible="False"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+                    <Button BackgroundColor="#3897f0" TextColor="White" Clicked="Button_Clicked_2" Grid.Column="1" Padding="4,4,4,4"  Text="Plaćanje karticom" CornerRadius="7" ContentLayout="Right, 15" ImageSource="Assets\icons8-credit-card-48.png"></Button>
+                  
+                </StackLayout>
+            </Grid>
+            <Button Margin="0,30,0,0" VerticalOptions="EndAndExpand" TextColor="White" BackgroundColor="#2196F3"  Clicked="Button_Clicked"  Text="Urediti stavke" CornerRadius="7" ContentLayout="Right, 15" ImageSource="Assets\icons8-add-basket-50.png"></Button>
+            <Button VerticalOptions="EndAndExpand" TextColor="White" ImageSource="Assets\icons8-track-order-48.png" BackgroundColor="#2196F3"  CornerRadius="7" ContentLayout="Right, 15" Clicked="Button_Clicked_1" Text="Odaberite novu rutu"></Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

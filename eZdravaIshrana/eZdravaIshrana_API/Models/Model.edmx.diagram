@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8f7d7dd619ee42fb98167f152067c971" Name="Diagram1">
+        <EntityTypeShape EntityType="eZdravaIshranaModel.Dobavljaci" Width="1.5" PointX="6" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="eZdravaIshranaModel.Korisnici" Width="1.5" PointX="3" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="eZdravaIshranaModel.KorisniciUloge" Width="1.5" PointX="5.25" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="eZdravaIshranaModel.NarudzbaStavke" Width="1.5" PointX="10.5" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="eZdravaIshranaModel.Ocjene" Width="1.5" PointX="10.5" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="eZdravaIshranaModel.Proizvodi" Width="1.5" PointX="5.25" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="eZdravaIshranaModel.Proizvodjac" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="eZdravaIshranaModel.SortaProizvoda" Width="1.5" PointX="3" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="eZdravaIshranaModel.Ulazi" Width="1.5" PointX="8.25" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="eZdravaIshranaModel.UlazStavke" Width="1.5" PointX="10.5" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="eZdravaIshranaModel.Uloge" Width="1.5" PointX="3" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="eZdravaIshranaModel.VrsteProizvoda" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
+        <AssociationConnector Association="eZdravaIshranaModel.FK_Ulazi_Dobavljaci" ManuallyRouted="false" />
+        <AssociationConnector Association="eZdravaIshranaModel.FK_KorisniciUloge_Korisnici" ManuallyRouted="false" />
+        <AssociationConnector Association="eZdravaIshranaModel.FK_Ulazi_Korisnici" ManuallyRouted="false" />
+        <AssociationConnector Association="eZdravaIshranaModel.FK_KorisniciUloge_Uloge" ManuallyRouted="false" />
+        <AssociationConnector Association="eZdravaIshranaModel.FK_NarudzbaStavke_Proizvodi" ManuallyRouted="false" />
+        <AssociationConnector Association="eZdravaIshranaModel.FK_Ocjene_Proizvodi" ManuallyRouted="false" />
+        <AssociationConnector Association="eZdravaIshranaModel.FK__Proizvodi__Proiz__72C60C4A" ManuallyRouted="false" />
+        <AssociationConnector Association="eZdravaIshranaModel.FK__Proizvodi__Sorta__02084FDA" ManuallyRouted="false" />
+        <AssociationConnector Association="eZdravaIshranaModel.FK_Proizvodi_VrsteProizvoda" ManuallyRouted="false" />
+        <AssociationConnector Association="eZdravaIshranaModel.FK_UlazStavke_Proizvodi" ManuallyRouted="false" />
+        <AssociationConnector Association="eZdravaIshranaModel.FK__SortaProi__Vrsta__01142BA1" ManuallyRouted="false" />
+        <AssociationConnector Association="eZdravaIshranaModel.FK_UlazStavke_Ulazi" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="eZdravaIshranaModel.Skladista" Width="1.5" PointX="0.75" PointY="1" />
+        <AssociationConnector Association="eZdravaIshranaModel.FK_Ulazi_Skladista" />
+        <EntityTypeShape EntityType="eZdravaIshranaModel.OcjeneDostavljaca" Width="1.5" PointX="13.5" PointY="7.875" />
+        <EntityTypeShape EntityType="eZdravaIshranaModel.Narudzbe" Width="1.5" PointX="10.5" PointY="4" />
+        <AssociationConnector Association="eZdravaIshranaModel.FK_NarudzbaStavke_Narudzbe" />
+        <AssociationConnector Association="eZdravaIshranaModel.FK__Narudzbe__Skladi__607251E5" />
+        <EntityTypeShape EntityType="eZdravaIshranaModel.Ambalaza" Width="1.5" PointX="13.75" PointY="5.25" />
+        <EntityTypeShape EntityType="eZdravaIshranaModel.AmbalazaStavke" Width="1.5" PointX="16" PointY="8.625" />
+        <EntityTypeShape EntityType="eZdravaIshranaModel.IzlazStavke" Width="1.5" PointX="15" PointY="12.375" />
+        <AssociationConnector Association="eZdravaIshranaModel.FK__AmbalazaS__Ambal__1F63A897" />
+        <AssociationConnector Association="eZdravaIshranaModel.FK_IzlazStavke_Proizvodi" />
+        <EntityTypeShape EntityType="eZdravaIshranaModel.Izlazi" Width="1.5" PointX="12.75" PointY="12.125" />
+        <AssociationConnector Association="eZdravaIshranaModel.FK__AmbalazaS__Izlaz__2057CCD0" />
+        <AssociationConnector Association="eZdravaIshranaModel.FK_Izlazi_Korisnici" />
+        <AssociationConnector Association="eZdravaIshranaModel.FK_Izlazi_Narudzbe" />
+        <AssociationConnector Association="eZdravaIshranaModel.FK_Izlazi_Skladista" />
+        <AssociationConnector Association="eZdravaIshranaModel.FK_IzlazStavke_Izlazi" />
+        <EntityTypeShape EntityType="eZdravaIshranaModel.Dostavljaci" Width="1.5" PointX="3.375" PointY="1" />
+        <AssociationConnector Association="eZdravaIshranaModel.FK__AmbalazaS__Dosta__1E6F845E" />
+        <AssociationConnector Association="eZdravaIshranaModel.FK__Izlazi__Dostavlj__36B12243" />
+        <AssociationConnector Association="eZdravaIshranaModel.FK__OcjeneDos__Dosta__4F47C5E3" />
+        <EntityTypeShape EntityType="eZdravaIshranaModel.Kupci" Width="1.5" PointX="8.25" PointY="8.875" />
+        <AssociationConnector Association="eZdravaIshranaModel.FK__AmbalazaS__Kupac__1D7B6025" />
+        <AssociationConnector Association="eZdravaIshranaModel.FK__Izlazi__KupacID__2CBDA3B5" />
+        <AssociationConnector Association="eZdravaIshranaModel.FK__OcjeneDos__Kupac__503BEA1C" />
+        <AssociationConnector Association="eZdravaIshranaModel.FK_Narudzbe_Kupci" />
+        <AssociationConnector Association="eZdravaIshranaModel.FK_Ocjene_Kupci" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

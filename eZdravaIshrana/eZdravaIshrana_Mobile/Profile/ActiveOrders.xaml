@@ -1,0 +1,57 @@
+﻿<Page
+    x:Class="eZdravaIshrana_Mobile.Profile.ActiveOrders"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:eZdravaIshrana_Mobile.Profile"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel Width="350">
+        <TextBlock Text="eZdravaIshrana::Aktivne narudžbe" FontSize="23"></TextBlock>
+        <ListView Name="narudzbaList"
+                  ItemClick="narudzbaList_ItemClick">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                     
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0" VerticalAlignment="Top">
+                            <TextBlock Style="{StaticResource BaseTextBlockStyle}">
+                                <Run Text="Naziv: "></Run>
+                                  <Run Text= "{Binding Proizvodi.Naziv}"></Run>
+                            </TextBlock>
+                            <TextBlock Style="{StaticResource BaseTextBlockStyle}">
+                                <Run Text="Sifra: "></Run>
+                                  <Run Text= "{Binding Proizvodi.Sifra}"></Run>
+                            </TextBlock>
+                            <TextBlock Style="{StaticResource BaseTextBlockStyle}">
+                                <Run Text="Količina: "></Run>
+                                  <Run Text= "{Binding Kolicina}"></Run>
+                            </TextBlock>
+                            <TextBlock Style="{StaticResource BaseTextBlockStyle}">
+                                <Run Text="Cijena: "></Run>
+                                  <Run Text= "{Binding Proizvodi.Cijena}"></Run>
+                            </TextBlock>
+                
+                        </StackPanel>
+                        
+                    </Grid>
+                    
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Grid>
+            <TextBlock Name="iznosLabel" FontWeight="Bold"
+                       FontSize="18"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"></TextBlock>
+            <Button Name="zakljuciButton" Content="Zaključi"
+                    HorizontalAlignment="Right"
+                    Click="zakljuciButton_Click"></Button>
+    </Grid>
+    </StackPanel>
+</Page>

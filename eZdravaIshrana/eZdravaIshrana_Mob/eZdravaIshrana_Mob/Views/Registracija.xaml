@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:Converter="clr-namespace:eZdravaIshrana_Mob.Converter"
+             mc:Ignorable="d"
+             x:Class="eZdravaIshrana_Mob.Views.Registracija">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <StyleSheet Source="/S1/Style.css"/>
+            <Converter:ImageConverter x:Key="imgConv"></Converter:ImageConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+
+        <Grid Margin="0,35,0,0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="170"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+   
+            </Grid.RowDefinitions>
+
+
+            <Label Grid.Row="0" FontSize="Medium" FontFamily="Ariel" TextColor="#2196F3" FontAttributes="Bold" Text="eZdravaIshrana :: REGISTRACIJA" HorizontalOptions="CenterAndExpand" ></Label>
+
+
+            <Image Grid.Row="0" Source="Assets\ezdravaishrana.png" VerticalOptions="Start" HorizontalOptions="Center"  />
+           
+            <StackLayout Grid.Row="1" Margin="15,0,15,0">
+                <Label TextColor="#2196F3" FontAttributes="Bold" x:Name="imelabel" Text="Unesite ime:" FontSize="17" ></Label>
+                <Entry  x:Name="imeInput" ></Entry>
+                <Label  FontAttributes="Bold" x:Name="imeError" TextColor="Red" IsVisible="True"></Label>
+                <Label TextColor="#2196F3" FontAttributes="Bold" x:Name="prezimelabel" Text="Unesite prezime:" FontSize="17" ></Label>
+                <Entry x:Name="prezimeInput"></Entry>
+                <Label  FontAttributes="Bold" x:Name="prezimeError" TextColor="Red" IsVisible="True"></Label>
+                <Label TextColor="#2196F3" FontAttributes="Bold" x:Name="emaillabel" Text="Unesite e-mail:" FontSize="17" ></Label>
+                <Entry x:Name="emailInput"></Entry>
+                <Label  FontAttributes="Bold" x:Name="emailError" TextColor="Red" IsVisible="True"></Label>
+                <Label TextColor="#2196F3" FontAttributes="Bold" x:Name="korisnickoImelabel" Text="Unesite korisničko ime:" FontSize="17" ></Label>
+                <Entry x:Name="korisnickoImeInput" ></Entry>
+                <Label  FontAttributes="Bold" x:Name="korisnickoImeError" TextColor="Red" IsVisible="True"></Label>
+                <Label TextColor="#2196F3" FontAttributes="Bold" x:Name="lozinkalabel" Text="Unesite lozinku:" FontSize="17" ></Label>
+                <Entry IsPassword="True" x:Name="lozinkaInput" ></Entry>
+                <Label  FontAttributes="Bold" x:Name="lozinkaError" TextColor="Red" IsVisible="True"></Label>
+                <Label TextColor="#2196F3" FontAttributes="Bold" x:Name="potvrdalozinkalabel" Text="Potvrdite lozinku:" FontSize="17" ></Label>
+                <Entry IsPassword="True" x:Name="potvrdalozinkaInput" ></Entry>
+                <Label FontAttributes="Bold" x:Name="potvrdalozinkaError" TextColor="Red" IsVisible="True"></Label>
+
+                <Button x:Name="registracijaButton" Clicked="registracijaButton_Clicked"  Text="Registruj se" BackgroundColor="#3897f0" TextColor="White" HeightRequest="50" VerticalOptions="Start" Grid.Row="3"/>
+
+                <Button Margin="0,3,0,0" x:Name="CancelButton"  Clicked="CancelButton_Clicked"  Text="Odustani" BackgroundColor="AliceBlue" TextColor="Black" HeightRequest="50" VerticalOptions="Start" Grid.Row="3"/>
+
+                
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

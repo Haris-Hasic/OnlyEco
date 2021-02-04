@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:eZdravaIshrana_Mob.ViewModels"
+             xmlns:Converter="clr-namespace:eZdravaIshrana_Mob.Converter" xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             mc:Ignorable="d"
+             x:Class="eZdravaIshrana_Mob.Views.ProizvodiPage"
+             Title="Pretraga proizvoda">
+ 
+    <ContentPage.BindingContext>
+        <viewModels:ProizvodiViewModel></viewModels:ProizvodiViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Converter:ImageConverter x:Key="imgConv"></Converter:ImageConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Margin="5">
+           
+            <Picker FontAttributes="Italic" ItemsSource="{Binding VrsteProizvodaList}"
+                    SelectedItem="{Binding SelectedVP}" ItemDisplayBinding="{Binding Naziv}"
+                    x:Name="cmbVrsta"></Picker>
+            <Entry Placeholder="Pretraga po nazivu" FontAttributes="Italic"   x:Name="txtNaziv" TextChanged="Entry_TextChanged"></Entry>
+            <Label TextColor="#2196F3" FontAttributes="Italic" Text="Lista proizvoda"
+    
+               HorizontalOptions="StartAndExpand" />
+            <ListView BackgroundColor="Transparent" ItemsSource="{Binding ProizvodiList}" ItemSelected="ListView_ItemSelected" HorizontalOptions="CenterAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Grid.Column="0" Padding="10" HorizontalOptions="StartAndExpand" >
+                                    <Image Margin="0,25,0,0" HorizontalOptions="CenterAndExpand" Source="{Binding SlikaThumb, Converter={StaticResource imgConv}}"></Image>
+                                </StackLayout>
+                                <StackLayout Grid.Column="1" Padding="10" >
+                                    <Label TextColor="#2196F3" HorizontalOptions="StartAndExpand" Text="Naziv: "                                
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16" />
+                                    <Label TextColor="#2196F3" FontAttributes="Bold"  HorizontalOptions="StartAndExpand" Text="Sifra: "                               
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />
+                                    <Label TextColor="#2196F3" FontAttributes="Bold"  HorizontalOptions="StartAndExpand" Text="Vrsta: "                               
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />
+                                    <Label  TextColor="#2196F3" FontAttributes="Bold"  HorizontalOptions="StartAndExpand" Text="Sorta: "                               
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />
+                                    <Label TextColor="#2196F3" FontAttributes="Bold"  HorizontalOptions="StartAndExpand" Text="Cijena u KM: "                               
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />
+                                    <Label TextColor="#2196F3" FontAttributes="Bold"   HorizontalOptions="StartAndExpand" Text="Prosjecna: "                               
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />
+                                    <Label TextColor="#2196F3" FontAttributes="Bold"  HorizontalOptions="StartAndExpand" Text="Proizvođač: "                               
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />
+                                </StackLayout>
+                                <StackLayout Grid.Column="2" Padding="10">
+                                    <Label FontAttributes="Italic" Text="{Binding Naziv}"                                
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16" />
+                                    <Label FontAttributes="Italic" Text="{Binding Sifra}"                               
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />
+                                    <Label FontAttributes="Italic" Text="{Binding Vrsta}"                               
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />
+                                    <Label FontAttributes="Italic" Text="{Binding Sorta}"                               
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />
+                                    <Label FontAttributes="Italic" x:Name="txtCijena" Text="{Binding Cijena , StringFormat='{0} KM '}"                               
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemTextStyle}"
+                                FontSize="13" />
+                                    <RelativeLayout >
+                                        <Label FontAttributes="Italic" Text="{Binding Prosjecna}"                               
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />
+                                        <Image Margin="18,2,0,0" Grid.Column="1" Source="Assets\starAll.png"></Image>
+                                    </RelativeLayout>
+                                    <Label FontAttributes="Italic" Text="{Binding Proizvođač}"                               
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+
+

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="eZdravaIshrana_Mob.Views.DostavljaciKorisnickiProfil">
+   
+    <ContentPage.Content>
+
+        <Grid Margin="0,35,0,0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="170"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+
+            </Grid.RowDefinitions>
+            <Label x:Name="lblnaslov" Grid.Row="0" FontSize="Medium" FontFamily="Ariel" TextColor="#2196F3" FontAttributes="Bold" Text="eZdravaIshrana :: Profil" HorizontalOptions="CenterAndExpand" ></Label>
+
+            <Image Grid.Row="0" Source="Assets\ezdravaishrana.png" VerticalOptions="Start" HorizontalOptions="Center"  />
+
+            <StackLayout Grid.Row="1" Margin="15,0,15,0">
+                <Label TextColor="#2196F3" FontAttributes="Bold" x:Name="nazivlabel" Text="Naziv:" FontSize="13" ></Label>
+                <Entry  x:Name="nazivinput" ></Entry>
+                <Label  FontAttributes="Bold" x:Name="nazivError" TextColor="Red" IsVisible="True"></Label>
+
+
+                <Label  TextColor="#2196F3" FontAttributes="Bold" x:Name="adresalabel" Text="Adresa:" FontSize="13" ></Label>
+                <Entry  x:Name="adresainput"></Entry>
+                <Label  FontAttributes="Bold" x:Name="adresaError" TextColor="Red" IsVisible="True"></Label>
+
+                <Label TextColor="#2196F3" FontAttributes="Bold" x:Name="emaillabel" Text="Unesite e-mail:" FontSize="13" ></Label>
+                <Entry x:Name="emailInput"></Entry>
+                <Label  FontAttributes="Bold" x:Name="emailError" TextColor="Red" IsVisible="True"></Label>
+               
+                <Label TextColor="#2196F3" FontAttributes="Bold" x:Name="korisnickoImelabel" Text="Unesite korisničko ime:" FontSize="13" ></Label>
+                <Entry x:Name="korisnickoImeInput" ></Entry>
+                <Label  FontAttributes="Bold" x:Name="korisnickoImeError" TextColor="Red" IsVisible="True"></Label>
+                
+                <Label TextColor="#2196F3" FontAttributes="Bold" x:Name="lozinkalabel" Text="Unesite lozinku:" FontSize="13" ></Label>
+                <Entry IsPassword="True" x:Name="lozinkaInput" ></Entry>
+                <Label  FontAttributes="Bold" x:Name="lozinkaError" TextColor="Red" IsVisible="True"></Label>
+                
+                <Label TextColor="#2196F3" FontAttributes="Bold" x:Name="potvrdalozinkalabel" Text="Potvrdite lozinku:" FontSize="13" ></Label>
+                <Entry IsPassword="True" x:Name="potvrdalozinkaInput" ></Entry>
+                <Label FontAttributes="Bold" x:Name="potvrdalozinkaError" TextColor="Red" IsVisible="True"></Label>
+
+                <Button x:Name="registracijaButton" Clicked="registracijaButton_Clicked"  Text="Spasi promjene" BackgroundColor="#3897f0" TextColor="White" HeightRequest="55" VerticalOptions="Start" Grid.Row="3" ImageSource="Assets\icons8-checkmark-48.png"   />
+
+
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

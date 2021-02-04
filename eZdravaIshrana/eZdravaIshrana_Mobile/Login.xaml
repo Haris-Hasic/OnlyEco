@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="eZdravaIshrana_Mobile.Login"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:eZdravaIshrana_Mobile"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.ColumnSpan="2">
+            <TextBlock Text="Fakultet informaciskih tehnologija"></TextBlock>
+            <TextBlock Text="eZdravaIshrana::login"  FontSize="30"></TextBlock>
+        </StackPanel>
+        
+        <TextBlock VerticalAlignment="Center" Text="Korisnicko Ime :" FontSize="20" Grid.Row="1"></TextBlock>
+        <TextBox Name="korisnickoImeInput" Grid.Column="1" Grid.Row="1"></TextBox>
+
+        <TextBlock VerticalAlignment="Center" Text="Lozinka :" FontSize="20" Grid.Row="2"></TextBlock>
+        <PasswordBox Name="lozinkaInput" Grid.Column="1" Grid.Row="2"></PasswordBox>
+        
+        <Button VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="3" Content="Login" Click="Button_Click"></Button>
+        <Button Name="registracijabtn" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="3" Content="Registracija" Click="registracijabtn_Click"></Button>
+
+
+    </Grid>
+</Page>

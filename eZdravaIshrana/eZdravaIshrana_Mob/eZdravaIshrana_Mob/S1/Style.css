@@ -1,0 +1,21 @@
+﻿.CloseButton {
+    background-color: red;
+    color: #FFFFFF;
+    font-size: 15;
+    border: 3px solid #3777BC;
+    font-family: Arial;
+
+}
+.DetailsButton {
+    background-color: lightgreen;
+    color: black;
+    font-size: 15;
+    border: 3px solid #3777BC;
+    font-family: Arial;
+}
+.AgreeButton {
+    background-color: green;
+    color: #FFFFFF;
+    font-size: 15;
+    font-family: Arial;
+}
